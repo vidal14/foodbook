@@ -1,0 +1,23 @@
+{
+  "name": "foodbook",
+  "version": "1.0.0",
+  "description": "Don&#39;t think just cook",
+  "author": "Vicent",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxt/content": "^1.7.0",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/stylelint-module": "^3.1.0",
+    "@nuxtjs/tailwindcss": "^1.0.0",
+    "stylelint": "^10.1.0"
+  }
+}
