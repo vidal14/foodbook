@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto">
-    <!-- <pre> {{ docs }}</pre> -->
+    <h1>DON'T THINK ONLY COOK</h1>
     <div class="grid-full">
       <card
         v-for="(doc, index) in docs"
@@ -26,24 +26,39 @@ export default {
     Card,
   },
   async asyncData({ $content }) {
-    // const docs = await $content('/articles').without(['body', 'toc']).where({ 'categorie' : { '$in' : ['postres', 'vegan'] }  }).fetch()
+    //const docs = await $content('/articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : 'vegan' }  }).fetch()
     const docs = await $content('/articles').without(['body', 'toc']).fetch()
     return { docs }
   },
-  methods: {
-    goToDoc(slug) {
-      this.$router.push({ path: `recipes/${slug}`})
-    },
-  }
 }
 </script>
 
-<style scoped>
+<style>
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
+
+:root {
+  --font-family-headings: 'Anton', sans-serif;
+  --font-family-headings-two: 'Source Serif Pro', serif;
+
+  --font-size-h1: 60px;
+}
+
+h1 {
+  font-family: var(--font-family-headings);
+  /* font-weight: 600; */
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-family: var(--font-family-headings);
+}
 
 .container {
   margin-top: 5rem;
@@ -56,4 +71,14 @@ export default {
   row-gap: 10px;
   column-gap: 10px;
 }
+
+.nuxt-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.nuxt-content > p {
+  margin-bottom: 40px;
+}
+
 </style>
