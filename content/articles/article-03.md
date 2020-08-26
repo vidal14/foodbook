@@ -1,8 +1,8 @@
 ---
-title: Segunda receta
+title: Tercera receta
 description: sedunda receta para el libro de recetas
 picture: https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1335&q=80
-categories: ['vegan']
+categories: ['postres', 'dinner']
 ---
 
 ## Contenido

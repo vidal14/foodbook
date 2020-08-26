@@ -2,6 +2,7 @@
 title: primera receta
 description: primera receta para el libro de recetas
 picture: https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1335&q=80
+categories: ['postres', 'vegan']
 ---
 
 ## Contenido
