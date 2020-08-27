@@ -86,7 +86,7 @@ export default {
 
   .card-image {
     width: 100%;
-    height: 300px;
+    height: 250px;
     position: relative;
   }
 
@@ -96,7 +96,7 @@ export default {
     object-fit: cover;
   }
 
-   /* .card-image::before {
+   .card-image::before {
      content: '';
      position: absolute;
      top: 0;
@@ -104,12 +104,13 @@ export default {
      width: 100%;
      height: 100%;
      background: rgb(0,0,0);
-      background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6334908963585435) 15%, rgba(0,0,0,0.22172619047619047) 28%, rgba(255,255,255,0) 39%);
-   } */
+      background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5334908963585435) 15%, rgba(0,0,0,0.12172619047619047) 28%, rgba(255,255,255,0) 39%);
+   }
 
-  /* .card-tags {
+  .card-tags {
     position: absolute;
     top: 0;
-  } */
+    right: 0;
+  }
 
 </style>

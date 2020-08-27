@@ -65,9 +65,9 @@ export default {
   color: var(--color-dark-gray);
   font-weight: 600;
   color: var(--color-white);
-  transition-property: background-color, color;
-  transition-duration: 0.25s;
-  transition-timing-function: ease;
+  transition-property: background-color, color, border-color;
+  transition-duration: 0.125s;
+  transition-timing-function: linear;
 }
 
 @media (max-width: 1024px) {
@@ -76,9 +76,9 @@ export default {
   }
 }
 
-@media (max-width: 798px) {
+@media (max-width: 698px) {
   .grid-full {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
@@ -107,6 +107,7 @@ export default {
 .nuxt-content ul li,
 .ingredients-list li {
   list-style: disc;
+  margin-bottom: 0.5rem;
 }
 
 </style>

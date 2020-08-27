@@ -3,13 +3,16 @@
     <header>
         <nav class="main-header container mx-auto flex items-center justify-between flex-wrap p-6">
           <div class="brand">
-            <span>JustCook</span>
+            <span>Justcook</span>
           </div>
           <div class="main-nav flex-grow">
             <div class="flex items-center">
               <nuxt-link to="/">Inicio</nuxt-link>
               <nuxt-link to="/informacion">Informacion útil</nuxt-link>
             </div>
+          </div>
+          <div class="search-button">
+            <button>Search</button>
           </div>
        </nav>
     </header>
@@ -112,6 +115,7 @@ footer {
   width: 100%;
   min-height: 200px;
   background-color: var(--color-dark-gray);
+  display: none;
 }
 
 </style>

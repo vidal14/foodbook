@@ -30,7 +30,9 @@
             </li>
           </ul>
         </div>
-        <nuxt-content :document="doc" />
+        <div class="recipe-steps">
+          <nuxt-content :document="doc" />
+        </div>
       </div>
     </div>
   </main>
@@ -58,6 +60,10 @@ export default {
 
 <style scoped>
 
+  .main-wrapper {
+    padding-bottom: 0;
+  }
+
   h1 {
     margin-bottom: 40px;
   }
@@ -66,10 +72,6 @@ export default {
   .nuxt-content h2 {
     font-size: 28px;
     margin-bottom: 20px;
-  }
-
-  .recipe-header {
-    margin-bottom: 50px;
   }
 
   .recipe-image {
@@ -85,14 +87,21 @@ export default {
 
   .recipe-content {
     display: grid;
-    grid-template-columns: 300px auto;
-    column-gap: 70px;
+    grid-template-columns: 400px auto;
   }
 
-  @media (max-width: 850px) {
+  .recipe-ingredients,
+  .recipe-steps {
+    padding: 50px 40px;
+  }
+
+  .recipe-ingredients {
+    background-color: #f1e7c9;
+  }
+
+  @media (max-width: 1024px) {
     .recipe-content {
       grid-template-columns: 1fr;
-      row-gap: 40px;
     }
   }
 </style>
