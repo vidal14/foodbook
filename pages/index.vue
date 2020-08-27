@@ -1,33 +1,42 @@
 <template>
-  <div class="container mx-auto">
-    <h1>DON'T THINK ONLY COOK</h1>
-    <div class="grid-full">
-      <card
-        v-for="(doc, index) in docs"
-        :key="index"
-        :title="doc.title"
-        :description="doc.description"
-        :link="doc.slug"
-        :image="doc.picture"
-        :categories="doc.categories"
-      >
-      </card>
+  <main class="main-wrapper">
+    <div class="container mx-auto">
+      <headingFirst>
+        <h1>DON'T THINK JUST COOK </h1>
+      </headingFirst>
+      <categorieList :recipes="docs"></categorieList>
+
+      <div class="grid-full">
+        <card
+          v-for="(doc, index) in docs"
+          :key="index"
+          :title="doc.title"
+          :description="doc.description"
+          :link="doc.slug"
+          :image="doc.picture"
+          :categories="doc.categories"
+        >
+        </card>
+      </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 import Card from '~/components/Card'
+import HeadingFirst from '~/components/HeadingFirst'
+import CategorieList from '~/components/CategorieList'
 
 export default {
   components: {
-    Logo,
     Card,
+    HeadingFirst,
+    CategorieList,
   },
   async asyncData({ $content }) {
     //const docs = await $content('/articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : 'vegan' }  }).fetch()
     const docs = await $content('/articles').without(['body', 'toc']).fetch()
+    console.log(docs.categories)
     return { docs }
   },
 }
@@ -40,45 +49,64 @@ export default {
 }
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
-
-:root {
-  --font-family-headings: 'Anton', sans-serif;
-  --font-family-headings-two: 'Source Serif Pro', serif;
-
-  --font-size-h1: 60px;
-}
-
-h1 {
-  font-family: var(--font-family-headings);
-  /* font-weight: 600; */
-  font-size: var(--font-size-h1);
-}
-
-h2 {
-  font-family: var(--font-family-headings);
-}
-
-.container {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+.main-wrapper {
+  padding: 6rem 0;
 }
 
 .grid-full {
   display: grid;
-  grid-template-columns: repeat(4, 25rem);
-  row-gap: 10px;
-  column-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+  column-gap: 15px;
 }
+
+.custom-tag {
+  background-color: var(--color-red);
+  color: var(--color-dark-gray);
+  font-weight: 600;
+  color: var(--color-white);
+  transition-property: background-color, color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+
+@media (max-width: 1024px) {
+  .grid-full {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 798px) {
+  .grid-full {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+.custom-tag:hover {
+  background-color: var(--color-dark-gray);
+}
+
+/* NUXT CONTENT */
 
 .nuxt-content h2 {
   font-size: 28px;
   margin-bottom: 20px;
 }
 
-.nuxt-content > p {
+.nuxt-content > p,
+.nuxt-content > ul {
   margin-bottom: 40px;
+}
+
+.nuxt-content ul,
+.ingredients-list {
+  padding-left: 20px;
+}
+
+.nuxt-content ul li,
+.ingredients-list li {
+  list-style: disc;
 }
 
 </style>

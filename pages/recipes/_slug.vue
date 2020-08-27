@@ -1,9 +1,10 @@
 <template>
-    <div class="container mx-auto">
+  <main class="main-wrapper">
+     <div class="container mx-auto">
       <div class="recipe-header">
         <div class="categorie-list text-center">
           <nuxt-link
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            class="custom-tag inline-block rounded-full px-3 py-1 text-sm mr-2 mb-2"
             v-for="(categorie, index) in doc.categories"
             :key="index"
             :to="{ path: `/${categorie}`, params: `${categorie}`}">
@@ -12,7 +13,7 @@
         </div>
         <h1 class="text-center"> {{ doc.title | uppercase }}</h1>
         <div class="recipe-image">
-          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1335&q=80" :alt="doc.title">
+          <img :src="`../images/recipes/${doc.picture}.jpg`" :alt="doc.title">
         </div>
         
       </div>
@@ -32,6 +33,8 @@
         <nuxt-content :document="doc" />
       </div>
     </div>
+  </main>
+   
  
 </template>
 
@@ -83,7 +86,7 @@ export default {
   .recipe-content {
     display: grid;
     grid-template-columns: 300px auto;
-    column-gap: 30px;
+    column-gap: 70px;
   }
 
   @media (max-width: 850px) {

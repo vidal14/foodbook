@@ -1,30 +1,24 @@
 <template>
   <div>
-    <nav class="flex items-center justify-between flex-wrap bg-gradient-to-r from-orange-400 to-orange-300 p-6">
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-xl tracking-tight">FoodBook</span>
-      </div>
-      <div class="block lg:hidden">
-        <button
-          class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
-      </div>
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow">
-          <nuxt-link to="/">Inicio</nuxt-link>
-          <!-- <nuxt-link to="/">Informacion</nuxt-link> -->
-        </div>
-      </div>
-    </nav>
+    <header>
+        <nav class="main-header container mx-auto flex items-center justify-between flex-wrap p-6">
+          <div class="brand">
+            <span>JustCook</span>
+          </div>
+          <div class="main-nav flex-grow">
+            <div class="flex items-center">
+              <nuxt-link to="/">Inicio</nuxt-link>
+              <nuxt-link to="/informacion">Informacion útil</nuxt-link>
+            </div>
+          </div>
+       </nav>
+    </header>
+  
     <div>
       <nuxt />
     </div>
 
-    <footer class="bg-gradient-to-r from-orange-400 to-orange-300">
+    <footer class="main-footer">
 
 
     </footer>
@@ -33,9 +27,27 @@
 </template>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+  :root {
+    --font-family-body: 'Open Sans', sans-serif;
+    --font-family-headings: 'Anton', sans-serif;
+    --font-family-headings-two: 'Source Serif Pro', serif;
+
+    --font-size-h1: 60px;
+
+    --color-white: #fff;
+    --color-dark-gray: #4d4d4d;
+    --color-light-beige: #f5f4f3;
+    --color-beige: #f3efe3;
+    --color-red: #ff6e6e;
+
+    --main-header-height: 100px;
+  }
+
   html {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -52,9 +64,54 @@
     margin: 0;
   }
 
-  footer {
-    width: 100%;
-    min-height: 400px;
-  }
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-beige);
+  color: var(--color-dark-gray);
+}
+
+h1 {
+  font-family: var(--font-family-headings);
+  /* font-weight: 600; */
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-family: var(--font-family-headings);
+}
+
+.container {
+  padding: 0 15px;
+}
+
+.main-header {
+  height: var(--main-header-height);
+}
+
+.main-header a {
+  font-size: 1.25em;
+  font-weight: 600;
+  transition: color 0.15s linear;
+}
+
+.main-header a:hover {
+  color: var(--color-red);
+}
+
+.main-header .brand {
+  font-family: var(--font-family-headings);
+  font-size: 34px;
+  margin-right: 40px;
+}
+
+.main-nav a:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+footer {
+  width: 100%;
+  min-height: 200px;
+  background-color: var(--color-dark-gray);
+}
 
 </style>
