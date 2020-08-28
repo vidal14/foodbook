@@ -12,8 +12,19 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { 
+        rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Anton&display=swap'
+        
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap'
+      }
+    ],
   },
   /*
   ** Customize the progress-bar color
@@ -59,15 +70,6 @@ export default {
     }
   },
   generate: {
-    // async routes () {
-    //   const { $content } = require('@nuxt/content')
-    //   const files = await $content({ deep: true }).only(['slug']).fetch()
-
-    //   return files.map(file => file.path === '/recipes' ? '/' : file.path)
-    // }
-    // routes: [
-    //   '/recipes/carrot-cake',
-    // ]
 
   }
 }

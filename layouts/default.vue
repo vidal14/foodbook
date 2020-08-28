@@ -40,9 +40,9 @@ export default {
 </script>  
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+  /* @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap'); */
+  /* @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap'); */
+  /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap'); */
 
   :root {
     --font-family-body: 'Open Sans', sans-serif;
@@ -86,6 +86,7 @@ body {
 h1 {
   font-family: var(--font-family-headings);
   font-size: var(--font-size-h1);
+  line-height: 1.2;
 }
 
 h2 {

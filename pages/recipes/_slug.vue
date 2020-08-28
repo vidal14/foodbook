@@ -2,7 +2,7 @@
   <main class="main-wrapper">
      <div class="container mx-auto">
       <div class="recipe-header">
-        <div class="categorie-list text-center">
+        <div class="categorie-list text-center mb-3 ">
           <nuxt-link
             class="custom-tag inline-block rounded-full px-3 py-1 text-sm mr-2 mb-2"
             v-for="(categorie, index) in doc.categories"
@@ -102,6 +102,11 @@ export default {
   @media (max-width: 1024px) {
     .recipe-content {
       grid-template-columns: 1fr;
+    }
+
+    .recipe-ingredients,
+    .recipe-steps {
+      padding: 30px 20px;
     }
   }
 </style>

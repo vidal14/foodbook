@@ -8,7 +8,7 @@
         class="custom-tag inline-block px-3 py-1 mr-2 mb-2"
         :to="{ path: `/${categorie}`}"
         >
-        {{ categorie }}
+        {{ categorie | capitalize }}
       </nuxt-link>
      </li>
   </ul>
@@ -21,6 +21,7 @@
             'vegetariana',
             'postres',
             'cremas',
+            'entrantes',
           ],
         }
     },
@@ -30,6 +31,13 @@
         required: true
       },
     },
+    filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+   },
   }
 </script>
 
@@ -45,7 +53,7 @@
  }
 
  .custom-tag {
-    padding: 20px 30px;
+    padding: 17px 30px;
     border-radius: 6px;
     font-size: 18px;
     background: transparent;

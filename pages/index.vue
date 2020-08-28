@@ -67,6 +67,7 @@ export default {
   transition-property: background-color, color, border-color;
   transition-duration: 0.125s;
   transition-timing-function: linear;
+  box-shadow: 2px 6px 13px -6px rgba(0,0,0,0.52);
 }
 
 @media (max-width: 1024px) {

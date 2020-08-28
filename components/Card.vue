@@ -7,7 +7,7 @@
       </div>
 
        <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">{{ title }}</div>
+        <div class="font-bold text-xl mb-1">{{ title }}</div>
         <p class="text-gray-700 text-base">
           {{ description }}
           {{ link }}
@@ -18,7 +18,7 @@
     </nuxt-link>
   
    
-    <div class="card-tags px-6 pt-4 pb-2">
+    <div class="card-tags px-3 pt-4 pb-2">
       <nuxt-link
         class="custom-tag inline-block rounded-full px-3 py-1 text-sm mr-2 mb-2"
         v-for="(categorie, index) in categories"
