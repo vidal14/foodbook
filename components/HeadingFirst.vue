@@ -1,5 +1,5 @@
 <template>
-  <div class="heading-first">
+  <div class="heading-first container mx-auto">
       <slot></slot>
   </div>
 </template>

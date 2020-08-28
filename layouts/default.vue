@@ -3,16 +3,16 @@
     <header>
         <nav class="main-header container mx-auto flex items-center justify-between flex-wrap p-6">
           <div class="brand">
-            <span>Justcook</span>
+            <nuxt-link to="/">JUSTCOOK</nuxt-link>
           </div>
           <div class="main-nav flex-grow">
             <div class="flex items-center">
-              <nuxt-link to="/">Inicio</nuxt-link>
-              <nuxt-link to="/informacion">Informacion útil</nuxt-link>
+              <nuxt-link to="/">Recetas</nuxt-link>
+              <nuxt-link to="/informacion">Informacion</nuxt-link>
             </div>
           </div>
           <div class="search-button">
-            <button>Search</button>
+            <SearchBar />
           </div>
        </nav>
     </header>
@@ -28,6 +28,16 @@
 
   </div>
 </template>
+
+<script>
+import SearchBar from '~/components/SearchBar'
+
+export default {
+  components: {
+    SearchBar,
+  },
+}
+</script>  
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
@@ -75,7 +85,6 @@ body {
 
 h1 {
   font-family: var(--font-family-headings);
-  /* font-weight: 600; */
   font-size: var(--font-size-h1);
 }
 
@@ -91,9 +100,12 @@ h2 {
   height: var(--main-header-height);
 }
 
-.main-header a {
+.main-header .main-nav a {
   font-size: 1.25em;
   font-weight: 600;
+}
+
+.main-header a {
   transition: color 0.15s linear;
 }
 

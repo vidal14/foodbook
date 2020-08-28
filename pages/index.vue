@@ -1,11 +1,10 @@
 <template>
   <main class="main-wrapper">
-    <div class="container mx-auto">
-      <headingFirst>
+     <headingFirst>
         <h1>DON'T THINK JUST COOK </h1>
       </headingFirst>
       <categorieList :recipes="docs"></categorieList>
-
+    <div class="container mx-auto">
       <div class="grid-full">
         <card
           v-for="(doc, index) in docs"

@@ -49,6 +49,8 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
+    padding-bottom: 0.6rem;
+    overflow-x: auto;
  }
 
  .custom-tag {
