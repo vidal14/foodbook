@@ -44,7 +44,7 @@
 
 export default {
   async asyncData({ $content, params }) {
-    const doc = await $content(`/articles/${params.slug}`).fetch()
+    const doc = await $content(`articles/${params.slug}`).fetch()
     return { doc }
   },
 

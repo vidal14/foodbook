@@ -34,7 +34,7 @@ export default {
   },
   async asyncData({ $content }) {
     //const docs = await $content('/articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : 'vegan' }  }).fetch()
-    const docs = await $content('/articles').without(['body', 'toc']).fetch()
+    const docs = await $content('articles').without(['body', 'toc']).fetch()
     console.log(docs.categories)
     return { docs }
   },

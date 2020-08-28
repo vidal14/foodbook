@@ -10,8 +10,11 @@
         <div class="font-bold text-xl mb-2">{{ title }}</div>
         <p class="text-gray-700 text-base">
           {{ description }}
+          {{ link }}
+           
         </p>
       </div>
+      
     </nuxt-link>
   
    
