@@ -1,23 +1,4 @@
 
-// function getPath() {
-//   async ready () {
-//     const { $content } = require('@nuxt/content')
-//     const files = await $content().only(['slug']).fetch()
-//     return files.map(file => file.path === '/index' ? '/' : file.path)
-//     //console.log(files)
-//   }
-// }
-
-// let data = require('@nuxt/content')
-// console.log(data)
-// let dynamicRoutes = () => {
-//   return new Promise(resolve => {
-//     resolve(data.map(el => `recipes/${el.slug}`))
-//   })
-//  }
-
-//  dynamicRoutes
-
 export default {
   mode: 'universal',
   /*
@@ -84,9 +65,9 @@ export default {
 
     //   return files.map(file => file.path === '/recipes' ? '/' : file.path)
     // }
-    routes: [
-      '/recipes/carrot-cake',
-    ]
+    // routes: [
+    //   '/recipes/carrot-cake',
+    // ]
 
   }
 }
