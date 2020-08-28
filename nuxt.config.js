@@ -8,15 +8,15 @@
 //   }
 // }
 
-let data = require('@nuxt/content')
+// let data = require('@nuxt/content')
+// console.log(data)
+// let dynamicRoutes = () => {
+//   return new Promise(resolve => {
+//     resolve(data.map(el => `recipes/${el.slug}`))
+//   })
+//  }
 
-let dynamicRoutes = () => {
-  return new Promise(resolve => {
-    resolve(data.map(el => `recipes/${el.id}`))
-  })
- }
-
- dynamicRoutes
+//  dynamicRoutes
 
 export default {
   mode: 'universal',
@@ -78,7 +78,15 @@ export default {
     }
   },
   generate: {
-    routes: dynamicRoutes,
+    // async routes () {
+    //   const { $content } = require('@nuxt/content')
+    //   const files = await $content({ deep: true }).only(['slug']).fetch()
+
+    //   return files.map(file => file.path === '/recipes' ? '/' : file.path)
+    // }
+    routes: [
+      '/recipes/carrot-cake',
+    ]
 
   }
 }
