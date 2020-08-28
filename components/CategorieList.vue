@@ -30,15 +30,6 @@
         required: true
       },
     },
-    // methods: {
-    //     filterCategories() {
-    //         this.recipes.filter(recipe => {
-    //             this.categories = 'hola'
-    //             console.log(categories)
-    //             return this.categories
-    //         })
-    //     }
-    // }
   }
 </script>
 
