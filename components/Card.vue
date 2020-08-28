@@ -51,15 +51,15 @@ export default {
       required: true
     },
   },
-  methods: {
-    goToDoc(slug) {
-      this.$router.push({ path: `recipes/${slug}`})
-    },
+  // methods: {
+  //   goToDoc(slug) {
+  //     this.$router.push({ path: `recipes/${slug}`})
+  //   },
 
-    goToCategorie(slug) {
-      this.$router.push({ path: `/${slug}`})
-    },
-  } 
+  //   goToCategorie(slug) {
+  //     this.$router.push({ path: `/${slug}`})
+  //   },
+  // } 
 }
 </script>
 
