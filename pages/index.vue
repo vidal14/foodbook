@@ -1,7 +1,7 @@
 <template>
   <main class="main-wrapper">
      <headingFirst>
-        <h1>DON'T THINK JUST COOK </h1>
+        <h1>DON'T THINK JUST COOKKKK </h1>
       </headingFirst>
       <categorieList :recipes="docs"></categorieList>
     <div class="container mx-auto">

@@ -1,6 +1,7 @@
 <template>
   <div class="card-article rounded overflow-hidden">
-    <nuxt-link :to="{ path: `recipes/${link}`}">
+    <nuxt-link 
+      :to="{ path: `recipes/${link}`}">
         <div class="card-image">
         <img :src="`../images/recipes/${image}.jpg`" :alt="title" />
       </div>

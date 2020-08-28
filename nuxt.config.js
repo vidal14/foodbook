@@ -57,5 +57,14 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+
+  generate: {
+    async ready () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true }).only(['path']).fetch()
+
+      return files.map(file => file.path === '/recipes' ? '/' : file.path)
+    }
   }
 }
