@@ -105,4 +105,11 @@ export default {
       padding: 30px 20px;
     }
   }
+
+   @media (max-width: 698px){
+      .recipe-image {
+        width: 100%;
+        height: 300px;
+      }
+  }
 </style>
