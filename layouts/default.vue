@@ -5,14 +5,17 @@
           <div class="brand">
             <nuxt-link to="/">JUSTCOOK</nuxt-link>
           </div>
-          <div class="main-nav flex-grow">
+          <div class="main-nav flex-grow hidden md:block">
             <div class="flex items-center">
               <nuxt-link to="/">Recetas</nuxt-link>
-              <nuxt-link to="/informacion">Informacion</nuxt-link>
+              <nuxt-link to="informacion">Informacion</nuxt-link>
             </div>
           </div>
-          <div class="search-button">
+          <div class="search-button hidden md:block">
             <SearchBar />
+          </div>
+          <div class="menu-button md:hidden">
+            <button @click='menuMobile = true'>Menu</button>
           </div>
        </nav>
     </header>
@@ -25,24 +28,40 @@
 
 
     </footer>
+  
+    <MobileMenu v-if="menuMobile" :is-active="menuMobile" @update-menu="updateMenu"/>
 
   </div>
 </template>
 
 <script>
 import SearchBar from '~/components/SearchBar'
+import MobileMenu from '~/components/MobileMenu'
 
 export default {
+  data() {
+    return {
+      menuMobile: false,
+    }
+  },
   components: {
-    SearchBar,
+    MobileMenu,
+    SearchBar
+  },
+  methods: {
+    updateMenu(state) {
+      this.menuMobile = state;
+    }
+  },
+  watch: {
+    '$route' () {
+      this.menuMobile = false
+    }
   },
 }
 </script>  
 
 <style>
-  /* @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap'); */
-  /* @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap'); */
-  /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap'); */
 
   :root {
     --font-family-body: 'Open Sans', sans-serif;
@@ -50,12 +69,17 @@ export default {
     --font-family-headings-two: 'Source Serif Pro', serif;
 
     --font-size-h1: 60px;
+    --font-size-xl: 1.25rem;
+    --font-size-lg: 1.125rem;
+    --font-size-base: 1rem;
 
     --color-white: #fff;
     --color-dark-gray: #4d4d4d;
     --color-light-beige: #f5f4f3;
     --color-beige: #f3efe3;
     --color-red: #ff6e6e;
+
+    --padding-container: 15px;
 
     --main-header-height: 100px;
   }
@@ -94,7 +118,7 @@ h2 {
 }
 
 .container {
-  padding: 0 15px;
+  padding: 0 var(--padding-container);
 }
 
 .main-header {
@@ -102,7 +126,7 @@ h2 {
 }
 
 .main-header .main-nav a {
-  font-size: 1.25em;
+  font-size: var(--font-size-lg);
   font-weight: 600;
 }
 

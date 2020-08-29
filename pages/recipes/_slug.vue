@@ -60,10 +60,6 @@ export default {
 
 <style scoped>
 
-  .main-wrapper {
-    padding-bottom: 0;
-  }
-
   h1 {
     margin-bottom: 40px;
   }

@@ -1,17 +1,19 @@
 <template>
-  <ul class="categorie-list">
-     <li
-      v-for="(categorie, index) in categories"
-      :key="index"
-      >
-        <nuxt-link
-        class="custom-tag inline-block px-3 py-1 mr-2 mb-2"
-        :to="{ path: `/${categorie}`}"
+  <div class="container mx-auto">
+    <ul class="categorie-list">
+      <li
+        v-for="(categorie, index) in categories"
+        :key="index"
         >
-        {{ categorie | capitalize }}
-      </nuxt-link>
-     </li>
-  </ul>
+          <nuxt-link
+          class="custom-tag inline-block px-3 py-1 mr-2 mb-2"
+          :to="{ path: `/${categorie}`}"
+          >
+          {{ categorie | capitalize }}
+        </nuxt-link>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
   export default {
@@ -49,7 +51,7 @@
     justify-content: center;
     margin-bottom: 50px;
     padding-bottom: 0.6rem;
-    overflow-x: auto;
+    flex-wrap: wrap;
  }
 
  .custom-tag {
@@ -66,6 +68,19 @@
     background: var(--color-red);
     border-color: var(--color-red);
     color: var(--color-white);
+ }
+
+ @media (max-width: 798px) {
+    .container {
+      padding: 0;
+    }
+
+    .categorie-list {
+      justify-content: flex-start;
+      padding-left: 15px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
  }
 
 </style>

@@ -1,6 +1,6 @@
 ---
-title: Carrot Cake
-description: Bizcocho de zanahoria vegano
+title: Bizcocho de zanahoria
+description: ''
 picture: vegan-carrot-cake
 categories: ['postres', 'vegetariana']
 ingredients: [

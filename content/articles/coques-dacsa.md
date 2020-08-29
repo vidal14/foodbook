@@ -8,7 +8,7 @@ ingredients: [
     '1/2 bloque de tofu firme',
     'Setas cultivadas',
     '1/2 Berenjena',
-    '1/2 ceblla',
+    '1/2 cebolla',
     '1 o 2 cucharadas salsa soja o tamari',
     '1c de levadura nutricional',
     'AOVE',

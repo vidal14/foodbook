@@ -7,11 +7,9 @@
       </div>
 
        <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-1">{{ title }}</div>
-        <p class="text-gray-700 text-base">
+        <h2 class="card-title font-bold mb-1">{{ title }}</h2>
+        <p class="card-description text-gray-700 text-base">
           {{ description }}
-          {{ link }}
-           
         </p>
       </div>
       
@@ -40,6 +38,7 @@ export default {
     },
     description: {
       type: String,
+      default: 'hola',
       required: true
     },
     link: {
@@ -115,6 +114,16 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  .card-title {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-xl);
+    line-height: 1.3;
+  }
+
+  .card-description {
+    line-height: 1.4;
   }
 
 </style>
