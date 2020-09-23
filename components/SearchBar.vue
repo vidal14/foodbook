@@ -2,6 +2,7 @@
     <div class="search-container relative">
         <input
         v-model="searchQuery"
+        v-on:keyup.enter="submitResults"
         type="search"
         autocomplete="off"
         placeholder="Buscar Recetas"
@@ -14,8 +15,8 @@
                 </NuxtLink>
             </li>
         </ul>
+        <!-- <pre> {{ articles }}</pre> -->
     </div>
-   
 
 </template>
 
@@ -25,6 +26,13 @@
       return {
         searchQuery: '',
         articles: []
+      }
+    },
+    methods: {
+      submitResults() {
+        console.log('busqueda resultados')
+        console.log(this.articles)
+        this.$router.push({ path: '/search', query:{recipes: this.searchQuery} });
       }
     },
     watch: {
