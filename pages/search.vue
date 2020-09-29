@@ -45,6 +45,7 @@ export default {
         prueba: 'cremas'
       }
   },
+  
   async asyncData({ $content, params }) {
     //const docs = await $content('/articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : 'vegan' }  }).fetch()
    console.log('recetas')
