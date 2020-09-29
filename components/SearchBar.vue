@@ -2,6 +2,7 @@
     <div class="search-container relative">
         <input
         v-model="searchQuery"
+        v-on:keyup.enter="submitResults"
         type="search"
         autocomplete="off"
         placeholder="Buscar Recetas"
