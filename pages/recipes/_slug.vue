@@ -13,7 +13,7 @@
         </div>
         <h1 class="text-center"> {{ doc.title | uppercase }}</h1>
         <div class="recipe-image">
-          <img :src="`../images/recipes/${doc.picture}.jpg`" :alt="doc.title">
+          <img :src="`../../images/recipes/${doc.picture}.jpg`" :alt="doc.title">
         </div>
         
       </div>
