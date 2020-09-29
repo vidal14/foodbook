@@ -32,7 +32,8 @@
       submitResults() {
         console.log('busqueda resultados')
         console.log(this.articles)
-        this.$router.push({ path: '/search', query:{recipes: this.searchQuery} });
+        // this.$router.push({ path: '/search', query:{recipes: this.searchQuery} });
+        this.$router.push({ path: '/search', params: this.searchQuery });
       }
     },
     watch: {

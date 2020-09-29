@@ -6,6 +6,8 @@
 
       <div class="container mx-auto">
           <p>Resultados para la búsqueda: {{searchQuery}}</p>
+          <pre> {{searchQuery}} </pre>
+          <pre> {{prueba}} </pre>
 
           <div class="grid-full">
           <card
@@ -40,15 +42,23 @@ export default {
       return {
         articles: [],
         searchQuery: '',
+        prueba: 'cremas'
       }
   },
-  async asyncData({ $content }) {
+  async asyncData({ $content, params }) {
     //const docs = await $content('/articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : 'vegan' }  }).fetch()
-    //searchQuery = this.$route.query.recipes
-    //console.log(this.searchQuery)
-    const docs = await $content('articles').without(['body', 'toc']).limit(6).search(this.$route.query.recipes).fetch()
-    console.log(docs.categories)
+   console.log('recetas')
+   
+    console.log($content)
+    // const docs = await $content('articles').without(['body', 'toc']).limit(6).search(this.searchQuery).fetch()
+    const docs = await $content('articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : 'cremas' }  }).fetch()
+    // console.log(docs.categories)
     return { docs }
+  },
+ created() {
+    this.searchQuery = this.$route.query.recipes;
+    console.log(this.searchQuery)
+    console.log(this.prueba)
   },
     
 //   methods: {
