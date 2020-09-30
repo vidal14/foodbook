@@ -34,8 +34,8 @@ export default {
   async asyncData({ $content, params }) {
     const docs = await $content('articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : `${params.categorie}` }  }).fetch()
     let title = params.categorie.toUpperCase()
-    console.log(title)
-    console.log(docs)
+    console.log(params)
+    //console.log(docs)
     return { docs, title }
   },
 

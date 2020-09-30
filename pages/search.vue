@@ -5,9 +5,7 @@
       </headingFirst>
 
       <div class="container mx-auto">
-          <p>Resultados para la búsqueda: {{searchQuery}}</p>
-          <pre> {{searchQuery}} </pre>
-          <pre> {{prueba}} </pre>
+          <p>Resultados para la búsqueda: {{textSearch}}</p>
 
           <div class="grid-full">
           <card
@@ -25,7 +23,7 @@
 
       
 
-       <pre> {{docs}}</pre>
+       <!-- <pre> {{docs}}</pre> -->
   </main>
 </template>
 
@@ -38,37 +36,15 @@ export default {
     HeadingFirst,
      Card,
   },
-  data() {
-      return {
-        articles: [],
-        searchQuery: '',
-        prueba: 'cremas'
-      }
-  },
   
-  async asyncData({ $content, params }) {
-    //const docs = await $content('/articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : 'vegan' }  }).fetch()
-   console.log('recetas')
+  async asyncData({ $content, query }) {
    
-    console.log($content)
-    // const docs = await $content('articles').without(['body', 'toc']).limit(6).search(this.searchQuery).fetch()
-    const docs = await $content('articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : 'cremas' }  }).fetch()
-    // console.log(docs.categories)
-    return { docs }
-  },
- created() {
-    this.searchQuery = this.$route.query.recipes;
-    console.log(this.searchQuery)
-    console.log(this.prueba)
+    let textSearch = query.recipes
+    //const docs = await $content('articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : `${query.recipes}` }  }).fetch()
+    const docs = await $content('articles').without(['body', 'toc']).search(`${query.recipes}`).limit(10).fetch()
+    return { docs, textSearch }
   },
     
-//   methods: {
-//     submitResults() {
-//       console.log(this.$route.query.recipes)
-//       console.log(this.articles)
-//       this.$router.push({ path: '/search', query:{recipes: this.articles} });
-//     }
-//   },
 }
 </script>
 
