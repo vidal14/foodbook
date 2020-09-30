@@ -31,9 +31,14 @@
     methods: {
       submitResults() {
         console.log('busqueda resultados')
-        console.log(this.articles)
-        this.$router.push({ path: '/search', query:{recipes: this.searchQuery} });
-        //this.$router.push({ path: '/search', params: this.searchQuery });
+        console.log($nuxt.$route.name)
+        console.log(this.searchQuery)
+        //this.$router.go({ path: '/search', query:{recipes: this.searchQuery}, force: true})
+        // if ($nuxt.$route.name != 'search') {
+          this.$router.push({ path: '/search', query:{recipes: this.searchQuery} })
+        // } else {
+        //   this.$router.go({ path: '/search', query:{recipes: this.searchQuery}, force: true })
+        // }
       }
     },
     watch: {

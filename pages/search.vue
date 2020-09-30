@@ -40,10 +40,32 @@ export default {
   async asyncData({ $content, query }) {
    
     let textSearch = query.recipes
+    console.log('la busqueda es' + textSearch)
     //const docs = await $content('articles').without(['body', 'toc']).where({ 'categories' : { '$contains' : `${query.recipes}` }  }).fetch()
     const docs = await $content('articles').without(['body', 'toc']).search(`${query.recipes}`).limit(10).fetch()
     return { docs, textSearch }
   },
+
+  whatch() {
+    console.log('componente creado' + '' + this.$route.query.recipes)
+    const docs = this.$content('articles').without(['body', 'toc']).search(`${this.$route.query.recipes}`).limit(10).fetch()
+    return { docs }
+  },
+
+  watch: {
+      async searchQuery(searchQuery) {
+        // if (!searchQuery) {
+        //   this.articles = []
+        //   return
+        // }
+        console.log('componente creado' + '' + this.$route.query.recipes)
+        // this.articles = await this.$content('articles')
+        //   .without('body')
+        //   .limit(6)
+        //   .search(searchQuery)
+        //   .fetch()
+      }
+    }
     
 }
 </script>
